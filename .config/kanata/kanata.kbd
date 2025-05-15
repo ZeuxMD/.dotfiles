@@ -1,0 +1,36 @@
+;;(defsrc
+;;  caps a s d f j k l ;
+;;)
+;;  a (multi f24 (tap-hold $tap-time $hold-time a lctl))
+;;  ; (multi f24 (tap-hold $tap-time $hold-time ; rctl))
+;;(deflayer base
+;;  @escctrl @a @s @d @f @j @k @l @;
+;;)
+
+;; defsrc is still necessary
+(defcfg
+  process-unmapped-keys yes
+)
+
+
+(defsrc
+    caps a w s o ; '
+)
+(defvar
+  tap-time 100
+  hold-time 180
+)
+
+(defalias
+  escctrl (tap-hold 100 150 esc lctl)
+  a (multi f24 (tap-hold $tap-time $hold-time a lalt))
+  w (multi f24 (tap-hold $tap-time $hold-time w lmet))
+  s (multi f24 (tap-hold $tap-time $hold-time s lsft))
+  o (multi f24 (tap-hold $tap-time $hold-time o rsft))
+  ; (multi f24 (tap-hold $tap-time 150 ; lalt))
+  ' (multi f24 (tap-hold $tap-time 150 ' rmet))
+)
+
+(deflayer base
+    @escctrl @a @w @s @o @; @'
+)
