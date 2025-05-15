@@ -57,7 +57,7 @@ exec_always --no-startup-id feh --bg-scale ~/Downloads/Images/Wallpapers/beautif
 
 # status bar
 # exec_always --no-startup-id killall polybar
-exec_always --no-startup-id polybar --config=~/.config/polybar/config.ini
+exec --no-startup-id polybar --config=~/.config/polybar/config.ini toph
 
 # toggle between ar, en with super + space
 exec --no-startup-id setxkbmap -layout us,ar -option grp:win_space_toggle
