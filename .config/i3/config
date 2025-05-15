@@ -24,7 +24,7 @@ gaps inner 10
 # Smart gaps (no outer gap when only one window)
 smart_gaps on
 
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -52,10 +52,12 @@ exec --no-startup-id xrandr --output HDMI-A-0 --off
 exec_always --no-startup-id picom --config ~/.config/picom.conf
 
 # background
-exec_always --no-startup-id feh --bg-scale ~/Downloads/Images/Wallpapers/wallpaperflare.com_wallpaper\(3\).jpg --experimental-backends
+# wallpaperflare.com_wallpaper\(3\).jpg
+exec_always --no-startup-id feh --bg-scale ~/Downloads/Images/Wallpapers/beautiful-landscape-1.jpg --experimental-backends
 
 # status bar
-exec --no-startup-id polybar --config=~/.config/polybar/config.ini toph
+# exec_always --no-startup-id killall polybar
+exec_always --no-startup-id polybar --config=~/.config/polybar/config.ini
 
 # toggle between ar, en with super + space
 exec --no-startup-id setxkbmap -layout us,ar -option grp:win_space_toggle
@@ -234,8 +236,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# # Start i3bar to display a workspace bar (plus the system information i3status
-# # finds out, if available)
+# class                 border  backgr. text    indicator child_border
+client.focused          #81a1c1 #285577 #ffffff #81a1c1   #98FB98
+client.focused_inactive #4c566a #5f676a #ffffff #4c566a   #4c566a
+client.unfocused        #4c566a #222222 #888888 #4c566a   #4c566a
+client.urgent           #81a1c1 #900000 #ffffff #900000   #81a1c1
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
 # bar {
 #         status_command i3status
+#         tray_output primary
 # }
