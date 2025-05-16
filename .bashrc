@@ -15,9 +15,6 @@ case $- in
       *) return;;
 esac
 
-# start with oh-my-posh
-eval "$(oh-my-posh init bash --config ~/.config/omp/omp-conf.toml)"
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -146,3 +143,11 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+
+# carapace for terminal completion
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+source <(carapace _carapace bash)
+
+# start with oh-my-posh
+eval "$(oh-my-posh init bash --config ~/.config/omp/omp-conf.toml)"
