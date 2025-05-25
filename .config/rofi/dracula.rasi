@@ -1,0 +1,20 @@
+/* ~/.config/rofi/dracula.rasi */
+* {
+    background:     #282A36;
+    background-alt: #3A3C4E; /* A slightly lighter background for elements */
+    foreground:     #F8F8F2;
+    selected:       #BD93F9; /* Dracula Purple for selection */
+    active:         #50FA7B; /* Dracula Green for active items */
+    urgent:         #FF5555; /* Dracula Red for urgent items */
+    on-selected:    #282A36; /* Text color when an item is selected (e.g., black on purple) */
+
+    comment:        #6272A4; /* Dracula Comment */
+    cyan:           #8BE9FD; /* Dracula Cyan */
+    orange:         #FFB86C; /* Dracula Orange */
+    pink:           #FF79C6; /* Dracula Pink */
+    yellow:         #F1FA8C; /* Dracula Yellow */
+
+    border-color:   @selected; /* Use the selection color for borders */
+    border-radius:  8px;
+    spacing:        2;       /* Default spacing */
+}
