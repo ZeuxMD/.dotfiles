@@ -95,6 +95,17 @@ bindsym $mod+d exec "rofi -modi drun, run -show drun"
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+# Maximize focused window as floating (respects bar area more or less)
+bindsym $alt+f \
+    exec killall polybar; \
+    floating enable; \
+    resize set width 100 ppt height 100 ppt; \
+    move position center;
+bindsym $alt+m floating disable; \
+        focus next;
+bindsym $alt+bracketleft move scratchpad
+bindsym $alt+bracketright scratchpad show
+
 bindsym $ctrl+$mod+h exec systemctl hibernate
 bindsym $ctrl+$mod+s exec systemctl suspend
 bindsym $ctrl+$mod+d exec systemctl poweroff
