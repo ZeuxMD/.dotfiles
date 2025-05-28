@@ -81,7 +81,14 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec kitty tmux
+
+# open i3 config (adjust path if needed)
+bindsym $mod+i exec kitty nvim ~/.dotfiles/.config/i3/config
+
+# open zen browser
+bindsym $mod+z exec flatpak run app.zen_browser.zen
+bindsym $ctrl+$alt+l exec librewolf
 
 # kill focused window
 bindsym $alt+q kill

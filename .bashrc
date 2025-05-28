@@ -151,3 +151,5 @@ source <(carapace _carapace bash)
 
 # start with oh-my-posh
 eval "$(oh-my-posh init bash --config ~/.config/omp/omp-conf.toml)"
+
+neofetch
